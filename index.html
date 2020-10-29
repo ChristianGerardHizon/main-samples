@@ -1,0 +1,61 @@
+<div style="background-color: #d7d7c5;width: 100%;">
+
+	<img src="https://i.ibb.co/0JCwccP/header.png">
+
+	<div style="background-color: white; margin: 20px; padding: 20px;">
+		<h2 style="color: #8A7A43;">New Order</h2>
+
+		<div style="margin-top: 20px;	margin-bottom: 20px;">{{ text_received }}</div>
+
+		<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+			<table>
+				<tr>
+					<td>{{ text_order_id }}</td>
+					<td><b>{{ order_id }}</b></td>
+				</tr>
+
+				<tr>
+					<td>{{ text_date_added }}</td>
+					<td><b>{{ date_added }}</b></td>
+				</tr>
+
+				<tr>
+					<td>{{text_order_status}}</td>
+					<td><b>{{order_status}}</b></td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_product}}</div>
+
+		<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+			<table style="table-layout: fixed; width:100%">
+				<tr>
+					<td style="width:30px">1x</td>
+					<td>Sample Product</td>
+					<td><b>P 3000</b></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="word-break: break-word; padding-left: 20px">
+						- nameadasdasadsdasdasdaasdasdasasasdasdasdfsdfsfsdfsdfdsdfsfsfsfsdfdadsadadasasdasdasdasds
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_total}}</div>
+
+		<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+			<table>
+				<tr>
+					<td>{{ total.title }}</td>
+					<td><b>{{ total.value }}</b></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<img src="https://i.ibb.co/9ZnK5wW/footer.png">
+
+</div>
