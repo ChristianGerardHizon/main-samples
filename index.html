@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ text_received }}</title>
+	<title>Reset Password</title>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
@@ -25,36 +25,25 @@
 			<div style="margin-top: 20px;	margin-bottom: 20px;">{{ text_order_status }}</div>
 
 			<div style="row-gap: 4px;padding: 10px; color:#6C5601">
-				<h1 style='border:2px #6C5601 solid; font-size:22px; display: inline;padding: 4px;'>
-					{{ order_status }}
-				</h1>
+				{{ text_link }}
 			</div>
 
-			{% if comment %}
-			<div style="margin-top: 30px">
-				{{ text_comment }}
-				<br/>
-				<br/>
-                {{comment}}
-            </div>
-				{% endif %}
+			<div style="margin-top: 20px;	margin-bottom: 20px;">
+				{{ text_info }}
+			</div>
 
-				<div style="margin-top: 20px;	margin-bottom: 20px;">
-					{{ text_info }}
-				</div>
-
-				<div>
-					{{ text_footer }},
-					<br />
-					<br />
-					<div style="font-size: 18px; color:#6C5601"">mushu</div>
+			<div>
+				{{ text_footer }},
+				<br />
+				<br />
+				<div style="font-size: 18px; color:#6C5601"">mushu</div>
 			</div>
 
 			</div>
 
 			<img width=" 100%" src="https://i.ibb.co/9ZnK5wW/footer.png">
 
-					</div>
+  </div>
 </body>
 
 </html>
