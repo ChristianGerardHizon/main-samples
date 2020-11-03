@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{{ text_received }}</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
+
+	<div
+		style="display: none; font-size: 0px; line-height: 0px; max-height: 0px; max-width: 0px; width: 0px; opacity: 0; overflow: hidden;">
+		{{ text_received }}
+	</div>
+
+	<div style="background-color: #d7d7c5; margin-left: auto; margin-right: auto; width: 800px">
+
+		<img width="100%" ; src="https://i.ibb.co/0JCwccP/header.png">
+
+		<div style="background-color: white; margin: 20px; padding: 20px;">
+			<h2 style="color: #8A7A43;">New Order</h2>
+
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{ text_received }}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					<tr>
+						<td>{{ text_order_id }}</td>
+						<td><b>{{ order_id }}</b></td>
+					</tr>
+
+					<tr>
+						<td>{{ text_date_added }}</td>
+						<td><b>{{ date_added }}</b></td>
+					</tr>
+
+					<tr>
+						<td>{{text_order_status}}</td>
+						<td><b>{{order_status}}</b></td>
+					</tr>
+				</table>
+			</div>
+
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_product}}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					{% for product in products %}
+					<tr>
+						<td style="width:30px">{{ product.quantity }}x</td>
+						<td>{{ product.name }}</td>
+						<td><b>{{ product.total }}</b></td>
+					</tr>
+					{% for option in product.option %}
+					<tr>
+						<td colspan="3" style="word-break: break-word; padding-left: 20px">
+							- {{option.name}} {{ option.value }}
+						</td>
+					</tr>
+					{% endfor %}
+
+				</table>
+				{% endfor %}
+
+			</div>
+
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_total}}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					{% for total in totals %}
+					<tr>
+						<td>{{ total.title }}</td>
+						<td><b>{{ total.value }}</b></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+		</div>
+
+		<img width="100%" src="https://i.ibb.co/9ZnK5wW/footer.png">
+
+	</div>
+</body>
+
+</html>
