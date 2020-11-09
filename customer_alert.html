@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>New Customer</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
+
+	<div
+		style="display: none; font-size: 0px; line-height: 0px; max-height: 0px; max-width: 0px; width: 0px; opacity: 0; overflow: hidden;">
+		{{ text_received }}
+	</div>
+
+	<div style="background-color: #d7d7c5; margin-left: auto; margin-right: auto; width: 600px">
+
+		<img width="100%" ; src="https://www.mushu.ph/image/mail/header.png">
+
+		<div style="background-color: white; margin-left: 20px; margin-right:20px; padding: 20px;">
+
+			<div style="margin-top: 20px;	margin-bottom: 20px; font-size: 14px">{{ text_signup }}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="border-spacing:0 10px; color:black">
+					<tr style="margin-bottom: 10px;">
+						<td>{{ text_firstname }}</td>
+						<td><b>{{ firstname }}</b></td>
+					</tr>
+
+					<tr>
+						<td style="width:180px">{{text_lastname}}</td>
+						<td><b>{{ email }}</b></td>
+					</tr>
+
+					{% if customer_group %}
+
+					<tr>
+						<td>{{text_customer_group}}</td>
+						<td><b>{{ customer_group }}</b></td>
+					</tr>
+					{% endif %}
+
+					<tr>
+						<td>{{text_email}}</td>
+						<td><b>{{ email }}</b></td>
+					</tr>
+
+					<tr>
+						<td>{{text_telephone}}</td>
+						<td><b>{{telephone}}</b></td>
+					</tr>
+
+				</table>
+			</div>
+
+		</div>
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td background="https://www.mushu.ph/image/mail/footer.png" bgcolor="#7bceeb" valign="top">
+					<div style="text-align:center; padding: 20px; color:black">
+						<br />
+						<div><span style="color: #8A7A43;">{{store_address}}</span> |
+							<span style="color: #8A7A43;">{{store_fax}}</span> |
+							<span style="color: #8A7A43;">{{store_telephone}}</span>
+						</div>
+						<br />
+						<b>@ {{year}} Mushu</b>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</body>
+
+</html>

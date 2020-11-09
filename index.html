@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Reset Password</title>
+	<title>{{ text_received }}</title>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;">
@@ -18,32 +18,88 @@
 		<img width="100%" ; src="https://i.ibb.co/0JCwccP/header.png">
 
 		<div style="background-color: white; margin: 20px; padding: 20px;">
-			<h2 style="color: #8A7A43;">Order #{{ order_id }} Update</h2>
+			<h2 style="color: #8A7A43;">New Order</h2>
 
-			<div style="margin-top: 20px;	margin-bottom: 20px; font-size: 14px">{{ text_greeting }} {{firstname}},</div>
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{ text_received }}</div>
 
-			<div style="margin-top: 20px;	margin-bottom: 20px;">{{ text_order_status }}</div>
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					<tr>
+						<td>{{ text_order_id }}</td>
+						<td><b>{{ order_id }}</b></td>
+					</tr>
 
-			<div style="row-gap: 4px;padding: 10px; color:#6C5601">
-				{{ text_link }}
+					<tr>
+						<td>{{ text_date_added }}</td>
+						<td><b>{{ date_added }}</b></td>
+					</tr>
+
+					<tr>
+						<td>{{text_order_status}}</td>
+						<td><b>{{order_status}}</b></td>
+					</tr>
+				</table>
 			</div>
 
-			<div style="margin-top: 20px;	margin-bottom: 20px;">
-				{{ text_info }}
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_product}}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					<!-- {% for product in products %} -->
+					<tr>
+						<td style="width:30px">1x</td>
+						<td>{{ product.name }}</td>
+						<td><b>{{ product.total }}</b></td>
+					</tr>
+					<!-- {% for option in product.option %} -->
+					<tr>
+						<td colspan="3" style="word-break: break-word; padding-left: 36px">
+							- {{option.name}} {{ option.value }}
+						</td>
+					</tr>
+					{% endfor %}
+
+				</table>
+				{% endfor %}
+
 			</div>
 
-			<div>
-				{{ text_footer }},
-				<br />
-				<br />
-				<div style="font-size: 18px; color:#6C5601"">mushu</div>
+			<div style="margin-top: 20px;	margin-bottom: 20px;">{{text_total}}</div>
+
+			<div style="background-color: #EFEFEF; background-color: #EFEFEF;row-gap: 4px;padding: 10px;">
+				<table style="table-layout: fixed; width:100%">
+					{% for total in totals %}
+					<tr>
+						<td>{{ total.title }}</td>
+						<td><b>{{ total.value }}</b></td>
+					</tr>
+					{% endfor %}
+				</table>
 			</div>
 
-			</div>
+			<div style="margin-top: 20px;	margin-bottom: 20px;"></div>
 
-			<img width=" 100%" src="https://i.ibb.co/9ZnK5wW/footer.png">
+			{{text_info_1}} <a style="color: #8A7A43" href="{{store_telephone}}">{{store_telephone}}</a> or <a
+				style="color: #8A7A43" href="{{store_fax}}">{{ store_fax }}</a> {{ text_info_2 }}
 
-  </div>
+		</div>
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td background="https://www.mushu.ph/image/mail/footer.png" bgcolor="#7bceeb" valign="top">
+					<div style="text-align:center; padding: 20px; color:black">
+						<br />
+						<div><span style="color: #8A7A43;">{{store_address}}</span> |
+							<span style="color: #8A7A43;">{{store_fax}}</span> |
+							<span style="color: #8A7A43;">{{store_telephone}}</span>
+						</div>
+						<br />
+						<b>@ {{year}} Mushu</b>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 
 </html>
